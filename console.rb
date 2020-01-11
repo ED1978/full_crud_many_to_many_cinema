@@ -1,4 +1,5 @@
 require_relative('./models/customer.rb')
+require_relative('./models/film.rb')
 
 require('pry-byebug')
 
@@ -29,6 +30,15 @@ kerry.update()
 # alan.delete()
 
 customers = Customer.all()
+
+# FILM
+hollywood = Film.new (
+  {
+    'title' => 'Once Upon A Time In HollyWood',
+    'price' => 6
+  }
+)
+hollywood.save()
 
 binding.pry
 nil
