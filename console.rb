@@ -82,6 +82,8 @@ ticket_2.update()
 
 found_ticket = Ticket.find(ticket_2.id)
 
+# ticket_2.delete()
+
 tickets = Ticket.all()
 
 binding.pry
