@@ -29,6 +29,11 @@ class Film
   end
 
 # READ
+  def self.all()
+    sql = "SELECT * FROM films"
+    films = SqlRunner.run(sql)
+    return films.map {|film| Film.new(film)}
+  end
 
 
 # UPDATE

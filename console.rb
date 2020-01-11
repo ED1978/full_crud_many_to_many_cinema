@@ -41,5 +41,15 @@ hollywood = Film.new (
 )
 hollywood.save()
 
+joker = Film.new (
+  {
+    'title' => 'Joker',
+    'price' => 6
+  }
+)
+joker.save()
+
+films = Film.all()
+
 binding.pry
 nil
