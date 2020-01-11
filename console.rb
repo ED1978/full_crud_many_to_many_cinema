@@ -26,6 +26,8 @@ found_customer = Customer.find(alan.id)
 kerry.funds = 200
 kerry.update()
 
+# alan.delete()
+
 customers = Customer.all()
 
 binding.pry
