@@ -77,7 +77,10 @@ ticket_2 = Ticket.new (
 )
 ticket_2.save()
 
-found_ticket = Ticket.find(ticket_1.id)
+ticket_2.film_id = joker.id
+ticket_2.update()
+
+found_ticket = Ticket.find(ticket_2.id)
 
 tickets = Ticket.all()
 
