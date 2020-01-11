@@ -21,5 +21,7 @@ alan = Customer.new (
 )
 alan.save()
 
+customers = Customer.all()
+
 binding.pry
 nil

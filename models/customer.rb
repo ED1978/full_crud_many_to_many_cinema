@@ -11,6 +11,7 @@ class Customer
     @funds = options['funds']
   end
 
+# CREATE
   def save()
     sql = "INSERT INTO customers
     (
@@ -27,6 +28,17 @@ class Customer
     @id = customer['id'].to_i
   end
 
+# READ
+  def self.all()
+    sql = "SELECT * FROM customers"
+    customers = SqlRunner.run(sql)
+    return customers.map {|customer| Customer.new(customer)}
+  end
+
+# UPDATE
+
+
+# DELETE
   def self.delete_all()
     sql = "DELETE FROM customers"
     SqlRunner.run(sql)
