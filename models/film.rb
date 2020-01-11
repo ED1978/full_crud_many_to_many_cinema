@@ -35,6 +35,12 @@ class Film
     return films.map {|film| Film.new(film)}
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM films WHERE id = $1"
+    values = [id]
+    film_hash = SqlRunner.run(sql, values).first
+    film = Film.new(film_hash)
+  end
 
 # UPDATE
 

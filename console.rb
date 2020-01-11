@@ -49,6 +49,8 @@ joker = Film.new (
 )
 joker.save()
 
+found_film = Film.find(joker.id)
+
 films = Film.all()
 
 binding.pry
