@@ -4,6 +4,7 @@ require_relative('./models/film.rb')
 require('pry-byebug')
 
 Customer.delete_all()
+Film.delete_all()
 
 # CUSTOMER
 kerry = Customer.new (

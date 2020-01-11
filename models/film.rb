@@ -34,6 +34,10 @@ class Film
 # UPDATE
 
 
-# DELETE  
+# DELETE
+def self.delete_all()
+  sql = "DELETE FROM films"
+  SqlRunner.run(sql)
+end
 
 end
