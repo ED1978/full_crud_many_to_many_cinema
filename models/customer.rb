@@ -35,6 +35,13 @@ class Customer
     return customers.map {|customer| Customer.new(customer)}
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM customers WHERE id = $1"
+    values = [id]
+    customer_hash = SqlRunner.run(sql, values).first
+    customer = Customer.new(customer_hash)
+  end
+
 # UPDATE
 
 

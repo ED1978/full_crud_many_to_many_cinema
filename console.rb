@@ -21,6 +21,8 @@ alan = Customer.new (
 )
 alan.save()
 
+found_customer = Customer.find(alan.id)
+
 customers = Customer.all()
 
 binding.pry
