@@ -77,6 +77,8 @@ ticket_2 = Ticket.new (
 )
 ticket_2.save()
 
+found_ticket = Ticket.find(ticket_1.id)
+
 tickets = Ticket.all()
 
 binding.pry
