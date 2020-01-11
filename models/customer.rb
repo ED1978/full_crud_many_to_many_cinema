@@ -69,4 +69,6 @@ class Customer
     SqlRunner.run(sql, values)
   end
 
+# INNER JOIN FILMS
+
 end

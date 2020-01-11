@@ -69,4 +69,20 @@ class Ticket
     SqlRunner.run(sql, values)
   end
 
+# JOIN CUSTOMER
+  def customer()
+    sql ="SELECT * FROM customers WHERE id = $1"
+    values = [@customer_id]
+    customer = SqlRunner.run(sql, values).first
+    return Customer.new(customer)
+  end
+
+# JOIN FILM
+  def film()
+    sql = "SELECT * FROM films WHERE id = $1"
+    values = [@film_id]
+    film = SqlRunner.run(sql , values).first
+    return Film.new(film)
+  end
+
 end

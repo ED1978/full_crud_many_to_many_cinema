@@ -34,6 +34,7 @@ kerry.update()
 
 customers = Customer.all()
 
+
 # FILM
 hollywood = Film.new (
   {
@@ -59,6 +60,7 @@ found_film = Film.find(joker.id)
 # joker.delete()
 
 films = Film.all()
+
 
 # TICKET
 ticket_1 = Ticket.new (
