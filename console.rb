@@ -49,6 +49,9 @@ joker = Film.new (
 )
 joker.save()
 
+joker.price = 7
+joker.update()
+
 found_film = Film.find(joker.id)
 
 films = Film.all()
