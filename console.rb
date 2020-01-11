@@ -23,6 +23,9 @@ alan.save()
 
 found_customer = Customer.find(alan.id)
 
+kerry.funds = 200
+kerry.update()
+
 customers = Customer.all()
 
 binding.pry
