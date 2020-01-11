@@ -54,6 +54,8 @@ joker.update()
 
 found_film = Film.find(joker.id)
 
+# joker.delete()
+
 films = Film.all()
 
 binding.pry
