@@ -29,7 +29,11 @@ def save()
 end
 
 # READ
-
+def self.all()
+  sql = "SELECT * FROM tickets"
+  tickets = SqlRunner.run(sql)
+  return tickets.map {|ticket| Ticket.new(ticket)}
+end
 
 # UPDATE
 
