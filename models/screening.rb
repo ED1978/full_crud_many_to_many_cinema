@@ -80,4 +80,18 @@ def delete()
   SqlRunner.run(sql, values)
 end
 
+def film()
+  sql = "SELECT * FROM films WHERE id = $1"
+  values = [@film_id]
+  film = SqlRunner.run(sql, values).first
+  return Film.new(film)
+end
+
+def tickets()
+  sql = "SELECT * FROM tickets WHERE screening_id = $1"
+  values = [@id]
+  tickets = SqlRunner.run(sql, values)
+  return tickets.map {|ticket| Ticket.new(ticket)}
+end
+
 end

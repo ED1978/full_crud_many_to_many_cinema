@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner.rb')
 require_relative('./ticket.rb')
+require_relative('./screening.rb')
 
 class Customer
 
@@ -90,9 +91,11 @@ class Customer
     return films.map {|film| Film.new(film)}
   end
 
-  def buy_ticket(film, screening)
-    Ticket.create_ticket(@id, film.id, screening.id)
-    pay(film.price)
+  def buy_ticket(screening)
+    Ticket.create_ticket(@id, screening.film_id, screening.id)
+    film = screening.film
+    # binding.pry
+    pay(film.price.to_i)
   end
 
   def pay(amount)

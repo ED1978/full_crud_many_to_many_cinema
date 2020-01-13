@@ -27,6 +27,14 @@ alan = Customer.new (
 )
 alan.save()
 
+eric = Customer.new (
+  {
+    'name' => 'Eric Downie',
+    'funds' => 200
+  }
+)
+eric.save()
+
 found_customer = Customer.find(alan.id)
 
 kerry.funds = 200
@@ -109,34 +117,40 @@ found_screening = Screening.find(screening_1.id)
 screenings = Screening.all()
 
 # TICKET
-ticket_1 = Ticket.new (
-  {
-    'customer_id' => alan.id,
-    'film_id' => hollywood.id,
-    'screening_id' => screening_1.id
-  }
-)
-ticket_1.save()
+# ticket_1 = Ticket.new (
+#   {
+#     'customer_id' => alan.id,
+#     'film_id' => hollywood.id,
+#     'screening_id' => screening_1.id
+#   }
+# )
+# ticket_1.save()
+#
+# ticket_2 = Ticket.new (
+#   {
+#     'customer_id' => kerry.id,
+#     'film_id' => hollywood.id,
+#     'screening_id' => screening_2.id
+#   }
+# )
+# ticket_2.save()
 
-ticket_2 = Ticket.new (
-  {
-    'customer_id' => kerry.id,
-    'film_id' => hollywood.id,
-    'screening_id' => screening_2.id
-  }
-)
-ticket_2.save()
+# ticket_2.film_id = joker.id
+# ticket_2.update()
 
-ticket_2.film_id = joker.id
-ticket_2.update()
-
-found_ticket = Ticket.find(ticket_2.id)
+# found_ticket = Ticket.find(ticket_2.id)
 
 # ticket_2.delete()
 
+alan.buy_ticket(screening_1)
+alan.buy_ticket(screening_2)
+alan.buy_ticket(screening_3)
+alan.buy_ticket(screening_4)
+kerry.buy_ticket(screening_2)
+eric.buy_ticket(screening_2)
+
 tickets = Ticket.all()
 
-alan.buy_ticket(joker, screening_1)
 
 kerry.pay(joker.price)
 
