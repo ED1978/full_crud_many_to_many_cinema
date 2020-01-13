@@ -45,6 +45,13 @@ def self.all()
   return screenings.map {|screening| Screening.new(screening)}
 end
 
+def self.find(id)
+  sql = "SELECT * FROM screenings WHERE id = $1"
+  values = [id]
+  screening_hash = SqlRunner.run(sql, values).first
+  screening = Screening.new(screening_hash)
+end
+
 # UPDATE
 
 

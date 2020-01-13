@@ -70,6 +70,8 @@ screening_2 = Screening.create_screening(joker.id, '1500')
 screening_3 = Screening.create_screening(hollywood.id, '1700')
 screening_4 = Screening.create_screening(joker.id, '1900')
 
+found_screening = Screening.find(screening_1)
+
 screenings = Screening.all()
 
 # TICKET
