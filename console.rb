@@ -77,7 +77,8 @@ films = Film.all()
 screening_1 = Screening.new (
   {
     'film_id' => hollywood.id,
-    'screening_time' => '1300'
+    'screening_time' => '1300',
+    'capacity' => 5
   }
 )
 screening_1.save()
@@ -85,7 +86,8 @@ screening_1.save()
 screening_2 = Screening.new (
   {
     'film_id' => joker.id,
-    'screening_time' => '1500'
+    'screening_time' => '1500',
+    'capacity' => 3
   }
 )
 screening_2.save()
@@ -93,7 +95,8 @@ screening_2.save()
 screening_3 = Screening.new (
   {
     'film_id' => hollywood.id,
-    'screening_time' => '1700'
+    'screening_time' => '1700',
+    'capacity' => 5
   }
 )
 screening_3.save()
@@ -101,7 +104,8 @@ screening_3.save()
 screening_4 = Screening.new (
   {
     'film_id' => joker.id,
-    'screening_time' => '1900'
+    'screening_time' => '1900',
+    'capacity' => 5
   }
 )
 screening_4.save()
