@@ -81,4 +81,8 @@ class Film
     return customers.map {|customer| Customer.new(customer)}
   end
 
+  def count_customers()
+    return customers().length
+  end
+
 end
