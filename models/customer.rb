@@ -90,8 +90,8 @@ class Customer
     return films.map {|film| Film.new(film)}
   end
 
-  def buy_ticket(film)
-    Ticket.create_ticket(@id, film.id)
+  def buy_ticket(film, screening)
+    Ticket.create_ticket(@id, film.id, screening.id)
     pay(film.price)
   end
 
