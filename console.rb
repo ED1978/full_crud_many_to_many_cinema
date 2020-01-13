@@ -6,6 +6,7 @@ require_relative('./models/screening.rb')
 require('pry-byebug')
 
 Ticket.delete_all()
+# Screening.delete_all()
 Customer.delete_all()
 Film.delete_all()
 
@@ -65,12 +66,18 @@ films = Film.all()
 
 
 # screening
-screening_1 = Screening.create_screening(hollywood.id, '1300')
-screening_2 = Screening.create_screening(joker.id, '1500')
-screening_3 = Screening.create_screening(hollywood.id, '1700')
-screening_4 = Screening.create_screening(joker.id, '1900')
+screening_1 = Screening.new (
+  {
+    'film_id' => hollywood.id,
+    'screening_time' => '1300'
+  }
+)
+screening_1.save()
 
-found_screening = Screening.find(screening_1)
+
+found_screening = Screening.find(screening_1.id)
+
+# screening_1.delete()
 
 screenings = Screening.all()
 
