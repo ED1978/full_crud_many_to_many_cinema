@@ -74,6 +74,33 @@ screening_1 = Screening.new (
 )
 screening_1.save()
 
+screening_2 = Screening.new (
+  {
+    'film_id' => joker.id,
+    'screening_time' => '1500'
+  }
+)
+screening_2.save()
+
+screening_3 = Screening.new (
+  {
+    'film_id' => hollywood.id,
+    'screening_time' => '1700'
+  }
+)
+screening_3.save()
+
+screening_4 = Screening.new (
+  {
+    'film_id' => joker.id,
+    'screening_time' => '1900'
+  }
+)
+screening_4.save()
+
+screening_4.screening_time = '1930'
+screening_4.update()
+
 
 found_screening = Screening.find(screening_1.id)
 

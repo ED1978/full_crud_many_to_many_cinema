@@ -53,6 +53,19 @@ def self.find(id)
 end
 
 # UPDATE
+def update()
+  sql = "UPDATE screenings SET
+  (
+    film_id,
+    screening_time
+  ) =
+  (
+    $1, $2
+  )
+  WHERE id = $3"
+  values = [@film_id, @screening_time, @id]
+  SqlRunner.run(sql, values)
+end
 
 
 # DELETE
