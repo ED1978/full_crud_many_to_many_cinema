@@ -1,6 +1,6 @@
 require_relative('./models/customer.rb')
 require_relative('./models/film.rb')
-require_relative('./models/ticket.rb')
+# require_relative('./models/ticket.rb')
 
 require('pry-byebug')
 
@@ -29,6 +29,7 @@ found_customer = Customer.find(alan.id)
 
 kerry.funds = 200
 kerry.update()
+
 
 # alan.delete()
 
@@ -59,6 +60,7 @@ found_film = Film.find(joker.id)
 
 # joker.delete()
 
+
 films = Film.all()
 
 
@@ -87,6 +89,8 @@ found_ticket = Ticket.find(ticket_2.id)
 # ticket_2.delete()
 
 tickets = Ticket.all()
+
+alan.buy_ticket(joker)
 
 binding.pry
 nil

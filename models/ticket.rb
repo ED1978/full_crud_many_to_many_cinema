@@ -28,6 +28,16 @@ class Ticket
     @id = ticket['id'].to_i
   end
 
+  def self.create_ticket(customer_id, film_id)
+    ticket = Ticket.new(
+      {
+        'customer_id' => customer_id,
+        'film_id' => film_id
+      }
+    )
+    ticket.save()
+  end
+
 # READ
   def self.all()
     sql = "SELECT * FROM tickets"

@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner.rb')
+require_relative('./ticket.rb')
 
 class Customer
 
@@ -79,6 +80,10 @@ class Customer
     values = [@id]
     films = SqlRunner.run(sql, values)
     return films.map {|film| Film.new(film)}
+  end
+
+  def buy_ticket(film)
+    Ticket.create_ticket(@id, film.id)
   end
 
 end
