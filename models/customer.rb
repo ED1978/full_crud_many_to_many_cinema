@@ -70,6 +70,14 @@ class Customer
     SqlRunner.run(sql, values)
   end
 
+# JOIN TICKETS
+  def tickets()
+    sql = "SELECT * FROM tickets WHERE customer_id = $1"
+    values = [@id]
+    tickets = SqlRunner.run(sql, values)
+    return tickets.map {|ticket| Ticket.new(ticket)}
+  end
+
 # INNER JOIN FILMS
   def films()
     sql = "SELECT films.*
@@ -89,6 +97,10 @@ class Customer
 
   def pay(amount)
     @funds -= amount
+  end
+
+  def count_tickets()
+    return tickets().length
   end
 
 end
