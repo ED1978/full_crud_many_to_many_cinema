@@ -92,10 +92,11 @@ class Customer
   end
 
   def buy_ticket(screening)
-    Ticket.create_ticket(@id, screening.film_id, screening.id)
-    film = screening.film
-    # binding.pry
-    pay(film.price.to_i)
+    if screening.count_tickets() < screening.capacity
+      Ticket.create_ticket(@id, screening.film_id, screening.id)
+      film = screening.film
+      pay(film.price.to_i)
+    end
   end
 
   def pay(amount)

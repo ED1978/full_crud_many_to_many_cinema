@@ -35,6 +35,14 @@ eric = Customer.new (
 )
 eric.save()
 
+steve = Customer.new (
+  {
+    'name' => 'Steve Smith',
+    'funds' => 200
+  }
+)
+steve.save()
+
 found_customer = Customer.find(alan.id)
 
 kerry.funds = 200
@@ -153,6 +161,7 @@ alan.buy_ticket(screening_4)
 kerry.buy_ticket(screening_2)
 eric.buy_ticket(screening_2)
 eric.buy_ticket(screening_3)
+steve.buy_ticket(screening_2)
 
 tickets = Ticket.all()
 
