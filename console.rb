@@ -1,6 +1,7 @@
 require_relative('./models/customer.rb')
 require_relative('./models/film.rb')
-# require_relative('./models/ticket.rb')
+require_relative('./models/ticket.rb')
+require_relative('./models/screening.rb')
 
 require('pry-byebug')
 
@@ -60,9 +61,16 @@ found_film = Film.find(joker.id)
 
 # joker.delete()
 
-
 films = Film.all()
 
+
+# screening
+screening_1 = Screening.create_screening(hollywood.id, '1300')
+screening_2 = Screening.create_screening(joker.id, '1500')
+screening_3 = Screening.create_screening(hollywood.id, '1700')
+screening_4 = Screening.create_screening(joker.id, '1900')
+
+screenings = Screening.all()
 
 # TICKET
 ticket_1 = Ticket.new (
