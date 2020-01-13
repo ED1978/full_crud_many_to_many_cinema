@@ -84,6 +84,11 @@ class Customer
 
   def buy_ticket(film)
     Ticket.create_ticket(@id, film.id)
+    pay(film.price)
+  end
+
+  def pay(amount)
+    @funds -= amount
   end
 
 end

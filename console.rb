@@ -92,5 +92,7 @@ tickets = Ticket.all()
 
 alan.buy_ticket(joker)
 
+kerry.pay(joker.price)
+
 binding.pry
 nil
