@@ -100,4 +100,17 @@ class Film
     return customers().length
   end
 
+  def most_popular_screening_times()
+    top_screening_time = nil
+    most_screenings = 0
+    for screening in screenings() do
+      ticket_count = screening.count_tickets()
+      if ticket_count > most_screenings
+        top_screening_time = screening.screening_time
+        most_screenings = ticket_count
+      end
+    end
+    return top_screening_time
+  end
+
 end

@@ -94,4 +94,8 @@ def tickets()
   return tickets.map {|ticket| Ticket.new(ticket)}
 end
 
+def count_tickets()
+  return tickets().length
+end
+
 end

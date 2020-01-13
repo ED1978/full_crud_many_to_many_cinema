@@ -148,6 +148,7 @@ alan.buy_ticket(screening_3)
 alan.buy_ticket(screening_4)
 kerry.buy_ticket(screening_2)
 eric.buy_ticket(screening_2)
+eric.buy_ticket(screening_3)
 
 tickets = Ticket.all()
 
